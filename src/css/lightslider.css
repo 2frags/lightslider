@@ -73,23 +73,23 @@
 
 /* Pager */
 .lSSlideOuter .lSPager.lSpg {
-    margin: 10px 0 0;
+    margin: .5em 0 0;
     padding: 0;
     text-align: center;
 }
 .lSSlideOuter .lSPager.lSpg > li {
     cursor: pointer;
     display: inline-block;
-    padding: 0 5px;
+    padding: 0 .25em;
 }
 .lSSlideOuter .lSPager.lSpg > li a {
     background-color: #222222;
-    border-radius: 30px;
+    border-radius: .25em;
     display: inline-block;
-    height: 8px;
+    height: .5em;
     overflow: hidden;
     text-indent: -999em;
-    width: 8px;
+    width: .5em;
     position: relative;
     z-index: 99;
     -webkit-transition: all 0.5s linear 0s;
@@ -112,19 +112,15 @@
     padding-left: 0;
     margin: 0;
     overflow: hidden;
-    transform: translate3d(0px, 0px, 0px);
-    -moz-transform: translate3d(0px, 0px, 0px);
-    -ms-transform: translate3d(0px, 0px, 0px);
     -webkit-transform: translate3d(0px, 0px, 0px);
-    -o-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
     -webkit-transition-property: -webkit-transform;
     -moz-transition-property: -moz-transform;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 .lSSlideOuter .lSPager.lSGallery li {
     overflow: hidden;
@@ -132,7 +128,7 @@
     transition: border-radius 0.12s linear 0s 0.35s linear 0s;
 }
 .lSSlideOuter .lSPager.lSGallery li.active, .lSSlideOuter .lSPager.lSGallery li:hover {
-    border-radius: 5px;
+    border-radius: .25em;
 }
 .lSSlideOuter .lSPager.lSGallery img {
     display: block;
@@ -150,30 +146,34 @@
 
 /* slider actions */
 .lSAction > a {
-    width: 32px;
+    width: 3em; height: 3em;
+    text-align: center; line-height: 3em;
     display: block;
     top: 50%;
-    height: 32px;
-    background-image: url('../img/controls.png');
     cursor: pointer;
     position: absolute;
+    overflow: hidden;
     z-index: 99;
-    margin-top: -16px;
-    opacity: 0.5;
-    -webkit-transition: opacity 0.35s linear 0s;
-    transition: opacity 0.35s linear 0s;
+    margin-top: -1em;
+    opacity: 0.6;
+    border-radius: 50%;
+    transition: all 0.35s linear 0s;
+    background: #fff;
+    box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+}
+.lSAction > a:before { font-size: 3em;
+    height: 1em; 
+    line-height: .85em;
+    color: #333;
 }
 .lSAction > a:hover {
-    opacity: 1;
+    opacity: .9; 
+    box-shadow: 5px 5px 20px rgba(0,0,0,.5);
 }
-.lSAction > .lSPrev {
-    background-position: 0 0;
-    left: 10px;
-}
-.lSAction > .lSNext {
-    background-position: -32px 0;
-    right: 10px;
-}
+.lSAction > .lSPrev {    left: .3em; }
+.lSAction > .lSPrev:before {content: '‹';  padding-right: .1em;}
+.lSAction > .lSNext {    right: .3em; }
+.lSAction > .lSNext:before {content: '›';  padding-left: .1em;}
 .lSAction > a.disabled {
     pointer-events: none;
 }
@@ -183,8 +183,6 @@
     filter: alpha(opacity=0);
     overflow: hidden;
 }
-
-
 /* vertical */
 .lSSlideOuter.vertical {
     position: relative;
@@ -205,18 +203,17 @@
 /* vertical controlls */
 .lSSlideOuter.vertical .lSAction > a {
     left: 50%;
-    margin-left: -14px;
+    margin-left: -1.5em;
     margin-top: 0;
+    transform: rotate(90deg);
 }
 .lSSlideOuter.vertical .lSAction > .lSNext {
-    background-position: 31px -31px;
-    bottom: 10px;
+    bottom: .3em;
     top: auto;
 }
 .lSSlideOuter.vertical .lSAction > .lSPrev {
-    background-position: 0 -31px;
     bottom: auto;
-    top: 10px;
+    top: .3em;
 }
 /* vertical */
 
@@ -241,108 +238,44 @@
 /* Rtl */
 
 @-webkit-keyframes rightEnd {
-    0% {
-        left: 0;
-    }
-
-    50% {
-        left: -15px;
-    }
-
-    100% {
-        left: 0;
-    }
+    0% {left: 0;}
+    50% {left: -15px;}
+    100% {left: 0;}
 }
 @keyframes rightEnd {
-    0% {
-        left: 0;
-    }
-
-    50% {
-        left: -15px;
-    }
-
-    100% {
-        left: 0;
-    }
+    0% {left: 0;}
+    50% {left: -15px;}
+    100% {left: 0;}
 }
 @-webkit-keyframes topEnd {
-    0% {
-        top: 0;
-    }
-
-    50% {
-        top: -15px;
-    }
-
-    100% {
-        top: 0;
-    }
+    0% {top: 0;}
+    50% {top: -15px;}
+    100% {top: 0;}
 }
 @keyframes topEnd {
-    0% {
-        top: 0;
-    }
-
-    50% {
-        top: -15px;
-    }
-
-    100% {
-        top: 0;
-    }
+    0% {top: 0;}
+    50% {top: -15px;}
+    100% {top: 0;}
 }
 @-webkit-keyframes leftEnd {
-    0% {
-        left: 0;
-    }
-
-    50% {
-        left: 15px;
-    }
-
-    100% {
-        left: 0;
-    }
+    0% {left: 0;}
+    50% {left: 15px;}
+    100% {        left: 0;    }
 }
 @keyframes leftEnd {
-    0% {
-        left: 0;
-    }
-
-    50% {
-        left: 15px;
-    }
-
-    100% {
-        left: 0;
-    }
+    0% {        left: 0;    }
+    50% {        left: 15px;    }
+    100% {        left: 0;    }
 }
 @-webkit-keyframes bottomEnd {
-    0% {
-        bottom: 0;
-    }
-
-    50% {
-        bottom: -15px;
-    }
-
-    100% {
-        bottom: 0;
-    }
+    0% {        bottom: 0;    }
+    50% {        bottom: -15px;    }
+    100% {        bottom: 0;    }
 }
 @keyframes bottomEnd {
-    0% {
-        bottom: 0;
-    }
-
-    50% {
-        bottom: -15px;
-    }
-
-    100% {
-        bottom: 0;
-    }
+    0% {        bottom: 0;    }
+    50% {        bottom: -15px;    }
+    100% {        bottom: 0;    }
 }
 .lSSlideOuter .rightEnd {
     -webkit-animation: rightEnd 0.3s;
